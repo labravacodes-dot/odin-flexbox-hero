@@ -1,0 +1,311 @@
+/* ==========================================
+   Hero Analysis: Quirk - Stylesheet
+   ========================================== */
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('Fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('Fonts/Roboto-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('Fonts/Roboto-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+:root {
+    --bg-color: #f7f4ed;            /* Notebook parchment background */
+    --card-bg: #ffffff;
+    --text-color: #2b2b2b;
+    --hero-green: #0F3822;          /* Deku's hero costume / hair green */
+    --text-light: #F9FAF8;          /* Light text for dark green background */
+    --subtext-light: #E5E7EB;
+    --all-might-gold: #FFC72C;      /* All Might golden-yellow hair accent */
+    --all-might-blue: #93c5fd;      /* All Might costume blue tint */
+    --all-might-red: #fca5a5;       /* All Might costume red tint */
+    --dark-ink: #1b2432;            /* Dark handwritten ink color */
+    --mutter-color: #555555;
+    --accent-orange: #ff6b35;
+    --accent-blue: #3882F6;
+    --border-color: #d1c7bd;
+    --font-main: 'Roboto', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header & Navigation */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: var(--hero-green);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.header .logo {
+    font-family: var(--font-main);
+    font-weight: 900;
+    font-size: 1.25rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--all-might-gold); /* All Might Gold Logo */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-family: var(--font-main);
+    text-decoration: none;
+    color: var(--all-might-gold); /* All Might Gold for Nav Links */
+    font-weight: 700;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--text-light);
+}
+
+/* Main Hero Section */
+.hero-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center; /* Vertically centers text and banner side-by-side */
+    background-color: var(--hero-green);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 40px;
+    margin-bottom: 40px;
+    color: var(--text-light);
+}
+
+.hero-text h1 {
+    font-family: var(--font-main);
+    font-weight: 900;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--all-might-gold); /* All Might Gold for Main Heading */
+}
+
+.hero-text > p {
+    font-family: var(--font-main);
+    font-weight: 400;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: var(--dark-ink);         /* Dark Handwritten Ink */
+    background: var(--all-might-blue); /* All Might Costume Blue Background */
+    padding: 15px;
+    border-radius: 6px;
+    border: 2px solid var(--all-might-gold);
+}
+
+.hero-text .subtext {
+    font-family: var(--font-main);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--dark-ink);         /* Dark Handwritten Ink */
+    background: var(--all-might-red);  /* All Might Costume Red Background */
+    padding: 15px;
+    border-left: 6px solid #b91c1c; /* All Might Costume Red Accent */
+    border-radius: 4px;
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    border-top: 1px solid #f87171;
+    border-right: 1px solid #f87171;
+    border-bottom: 1px solid #f87171;
+}
+
+.cta-button {
+    font-family: var(--font-main);
+    background-color: #dc2626; /* All Might Red Button */
+    color: var(--text-light);
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #b91c1c;
+}
+
+/* Hero Image / Plus Ultra Banner Styling */
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 6px;
+    border: 2px solid var(--all-might-gold); /* Framed in All Might Gold */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+}
+
+/* Analysis Cards Container Grid */
+.analysis-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.analysis-card {
+    background-color: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.analysis-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.analysis-card .illustration img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+.analysis-card h3 {
+    font-family: var(--font-main);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.analysis-card p {
+    font-family: var(--font-main);
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: var(--mutter-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-main {
+        grid-template-columns: 1fr;
+    }
+    .header {
+        flex-direction: column;
+        gap: 15px;
+    }  
+}
+/* Bottom Call to Action Section */
+.cta-banner {
+    font-family: var(--font-main);
+    background-color: var(--hero-green);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 40px;
+    margin-top: 40px;
+    text-align: center;
+    color: var(--text-light);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.cta-banner h2 {
+    font-family: var(--font-main);
+    font-weight: 900;
+    font-size: 2rem;
+    color: var(--all-might-gold);
+}
+
+.cta-quote {
+    font-family: var(--font-main);
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--dark-ink);
+    background: var(--all-might-blue);
+    padding: 15px 25px;
+    border-radius: 6px;
+    border: 2px solid var(--all-might-gold);
+}
+
+.cta-banner .cta-button {
+    font-family: var(--font-main);
+    font-weight: 700;
+    background-color: #dc2626;
+    color: var(--text-light);
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.cta-banner .cta-button:hover {
+    background-color: #b91c1c;
+}
+/* Footer Copyright Styling */
+.footer-copyright {
+    font-family: var(--font-main);
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: var(--mutter-color);
+}
+
+.footer-copyright a {
+    color: var(--hero-green);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.footer-copyright a:hover {
+    text-decoration: underline;
+}
